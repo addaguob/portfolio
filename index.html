@@ -1,1 +1,290 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miguel A. Rivera — CS Student</title>
+  <style>
+    :root {
+      /* Grayish army‑green palette */
+      --accent: #2f3b2f;        /* dark olive */
+      --accent-600: #3a4a3a;    /* heading/hover */
+      --accent-100: #e9efe9;    /* badges/bg tints */
+      --text: #111312;
+      --muted: #515c52;
+      --bg: #ffffff;
+      --line: #dfe4df;
+      --sidebar-bg: #f4f6f4;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 24px 96px; /* extra bottom space for sticky footer */
+    }
+
+    /* Header band inspired by the sample CV */
+    .header-band {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+    }
+    .name { font-size: 32px; font-weight: 800; line-height: 1.1; color: #fff; }
+    .title { color: #dfe7df; font-weight: 700; margin-top: 4px; }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+    }
+
+    aside.sidebar {
+      background: var(--sidebar-bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      height: fit-content;
+    }
+    
+    .section .tooling-ul { 
+      margin: 6px 0 10px 0;       /* remove left/right extra margin */
+      padding-left: 16px;         /* reduce default UL padding */
+      list-style-position: outside;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin: 18px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line); /* table-like divider */
+    }
+
+    .section p { margin: 6px 0 0 0; }
+
+    .section ul { margin: 6px 0 0 18px; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .badge { background: var(--accent-100); color: var(--accent-600); padding: 5px 8px; border-radius: 6px; font-size: 12px; }
+
+    .small { color: var(--muted); font-size: 13px; }
+    .role { font-weight: 700; }
+    .project-title { font-weight: 700; }
+    .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+    .card {
+      padding: 12px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+  a { color: var(--accent-600); }
+
+    footer.sticky {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid var(--line);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn { background: #0b5fff; border: none; color: #fff; padding: 10px 14px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn.secondary { background: #f1f1f1; color: #333; }
+
+    .kv { display: grid; grid-template-columns: 80px 1fr; gap: 6px 6px; }
+    .kv .k { color: var(--muted); }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      footer.sticky, .no-print { display: none !important; }
+      body { background: white; }
+      .page { padding: 0; }
+      @page { size: A4; margin: 12mm; }
+      .grid { grid-template-columns: 280px 1fr; gap: 18px; }
+      .card { break-inside: avoid; page-break-inside: avoid; }
+      a { color: #064a2a; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header-band">
+      <div class="name">Miguel A. Rivera</div>
+      <div class="title">Computer Science Student — De La Salle University</div>
+    </div>
+
+    <div class="grid">
+      <aside class="sidebar">
+        <section class="section">
+          <!-- Save your attached photo as profile.jpg in the same folder as this file -->
+          <img class="photo" src="profile.jpg" alt="Photo of Miguel A. Rivera" />
+        </section>
+        <section class="section">
+          <h2>Summary</h2>
+          <p>Computer Science student at De La Salle University building end‑to‑end products with Python 3, FastAPI, SQLModel/SQLAlchemy, and SQL (SQLite/PostgreSQL). Shipped production‑style projects as a solo developer—auth, role‑based access, offline‑first workflows, and reporting/export—validated by a 1st‑place campus research award. Seeking a Software Engineering Internship or Junior Python role focused on backend APIs, testing, and clean, maintainable code.</p>
+        </section>
+
+        <section class="section">
+          <h2>Contact</h2>
+          <div class="kv small">
+            <div class="k">Location</div><div>Taft, Manila, Philippines</div>
+            <div class="k">Phone</div><div><a href="tel:+639175550123">+63 917 555 0123</a></div>
+            <div class="k">Email</div><div><a href="mailto:miguel.rivera@example.com">miguel.rivera@example.com</a></div>
+            <div class="k">GitHub</div><div><a href="https://github.com/miguelrivera">github.com/miguelrivera</a></div>
+            <div class="k">LinkedIn</div><div><a href="https://linkedin.com/in/miguelrivera">linkedin.com/in/miguelrivera</a></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Core skills</h2>
+          <div class="badges">
+            <span class="badge">Python 3</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">SQLModel</span>
+            <span class="badge">Flet</span>
+            <span class="badge">NiceGUI</span>
+            <span class="badge">SQLite</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">REST APIs</span>
+            <span class="badge">Auth</span>
+            <span class="badge">Docker (basic)</span>
+            <span class="badge">Git/GitHub</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">HTML/CSS/JS</span>
+            <span class="badge">C#/.NET (recent)</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Tooling</h2>
+          <ul class="tooling-ul">
+            <li>Testing: pytest, requests/httpx; type checking with mypy; linters black/ruff</li>
+            <li>Backend: FastAPI, SQLModel/SQLAlchemy, Alembic migrations, async tasks</li>
+            <li>Frontend: Flet and NiceGUI for desktop/web UIs; utility‑first CSS mindset</li>
+            <li>Data: SQLite for local‑first; PostgreSQL for production; Pandas for ETL</li>
+            <li>DevOps: Docker basics, GitHub Actions, environment management</li>
+          </ul>
+        </section>        
+      </aside>
+
+      <main>
+        <section class="section projects">
+          <h2>Project Experience</h2>
+
+          <div class="card">
+            <div class="project-title">Campus Research Hub — Thesis Support Platform <span class="meta">Solo Developer · 2024–2025</span></div>
+            <ul>
+              <li>Built and delivered a research workflow app for student teams; enabled a 1st‑place award in a campus research competition.</li>
+              <li>Designed REST API + data model with FastAPI + SQLModel/SQLAlchemy; ran on SQLite/PostgreSQL for local‑first and production workflows.</li>
+              <li>Implemented authentication and role‑based access control (RBAC), offline‑first data capture, and exportable reporting (CSV/PDF).</li>
+              <li>Partnered with faculty advisers and student researchers to translate real workflows into reliable features; iterated quickly with maintainable architecture.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="project-title">HealthTrack — Clinic Ops Prototype <span class="meta">Independent · 2024</span></div>
+            <ul>
+              <li>Prototyped a clinic operations system with a client‑server API and modules for job orders, patients, doctors, and sales.</li>
+              <li>Built with FastAPI + SQLModel and NiceGUI/Flet for internal tooling; paused when sponsorship ended.</li>
+              <li>Extracted reusable components (auth, ORM models, service layer) that accelerated follow‑on projects.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="project-title">Open‑source Utilities & Experiments <span class="meta">2023–Present — github.com/miguelrivera</span></div>
+            <ul>
+              <li>Built small tools and prototypes (CLI/GUI), web scraping automation, and data conversion pipelines.</li>
+              <li>Maintain an active GitHub presence demonstrating continuous learning and delivery since Aug 2023.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Udemy Courses</h2>
+          <div class="card">
+            <div class="role">Python From Scratch & Selenium WebDriver QA Automation (2024)</div>
+            <div class="meta">~39h 45m · Updated Dec 2025</div>
+            <ul>
+              <li>Python fundamentals → practical automation; Selenium WebDriver; building a small test framework; HTML reporting with screenshots.</li>
+              <li>Applied skills: Python scripting, web automation, debugging, and SQL fundamentals for test workflows.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="role">C# .NET with MS SQL — Beginner to Master (2025)</div>
+            <div class="meta">~24h 15m · Updated Aug 2025</div>
+            <ul>
+              <li>Built REST APIs with modern .NET; practiced T‑SQL for MS SQL Server/Azure SQL; used Postman/Azure Data Studio.</li>
+              <li>Reinforced backend fundamentals applicable to API development and database-driven applications.</li>
+            </ul>
+          </div>
+        </section>
+        
+        <section class="section">
+          <h2>Education</h2>
+          <div class="card">
+            <div class="role">De La Salle University — BS Computer Science</div>
+            <div class="meta">2022–Present — Software engineering, data structures, and systems</div>
+          </div>
+          <div class="card">
+            <div class="role">Harvard CS50x & CS50P</div>
+            <div class="meta">2023–2024 — Foundations of CS, programming, and Python</div>
+          </div>
+          <div class="small">Student research assistantship and technical writing.</div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="sticky">
+    <div>
+      <strong>Miguel A. Rivera — Resume</strong>
+      <span class="small"> • Last updated <span id="updated"></span></span>
+    </div>
+    <div>
+      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+      <a class="btn secondary no-print" href="mailto:miguel.rivera@example.com">Email me</a>
+      <a class="btn secondary" href="resume.md" download>View as Markdown</a>
+    </div>
+  </footer>
+
+  <script>
+    // Show last-updated date
+    document.getElementById('updated').textContent =
+      new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+  </script>
+</body>
+</html>
